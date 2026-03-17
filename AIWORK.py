@@ -3,6 +3,8 @@ from openai import OpenAI
 import base64
 import time
 import random
+import os
+from openai import OpenAI
 
 # ==========================================
 # 1. PAGE CONFIG & CUSTOM CSS
@@ -90,10 +92,9 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # ==========================================
 # 2. INITIALIZATION & API FUNCTIONS
 # ==========================================
-# Replace with your actual API key
-client = OpenAI(api_key="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")
-
-# Initialize Chat History for Tab 1
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
+                
 if "chat_messages" not in st.session_state:
     st.session_state.chat_messages = [
         {"role": "system", "content": "You are an expert, patient AI tutor. Provide clear, step-by-step solutions. If the user asks a follow-up question, explain the concepts thoroughly."}
