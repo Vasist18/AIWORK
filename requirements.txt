@@ -1,0 +1,12 @@
+openai
+fastapi
+uvicorn
+python-dotenv
+reportlab
+pytesseract
+opencv-python
+streamlit
+pandas
+numpy
+scikit-learn
+plotly
